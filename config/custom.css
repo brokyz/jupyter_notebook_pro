@@ -1,0 +1,144 @@
+/*
+Placeholder for custom user CSS
+
+mainly to be overridden in profile/static/custom/custom.css
+
+This will always be an empty file
+*/
+
+/* body宽度 */
+#notebook-container {
+    width: 100%;
+}
+
+/* 头部拉宽 */
+#header div#menubar-container,
+#header div#header-container {
+    width: 99%;
+    padding: 0;
+}
+
+/* 代码块和头部之间的距离 */
+div#notebook{
+    padding-top: 0;
+}
+
+/* 输入代码框圆角并显示偏向于中间 */
+div.input_area {
+    border-radius: 10px;
+    width: 95%;
+}
+div.output_area {
+    width: 96%;
+}
+
+/* 消除选中代码块的边框 */
+div.cell.selected, div.cell.selected.jupyter-soft-selected {
+    border: none;
+}
+
+div.cell {
+    width: 90%;
+    margin: auto;
+}
+
+/* div.output_text {
+    text-align: center;
+} */
+
+/* 给选中代码块的右侧添加左侧相同提示 */
+div.cell.selected:after, div.cell.selected.jupyter-soft-selected:after {
+    position: absolute;
+    display: block;
+    top: -1px;
+    right: -1px;
+    width: 5px;
+    height: calc(100% + 2px);
+    content: '';
+    background: #42A5F5;
+}
+
+/* 输出信息的宽度 */
+div.output_area pre {
+    width: 93%;
+}
+
+/* Markdown */
+div#notebook {
+    font-family: san francisco, "PingFangSC-Medium", "Microsoft YaHei";
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+div#notebook h1 {
+    color: #9900ff;
+}
+
+div#notebook h2 {
+    color: #007aff;
+}
+
+div#notebook h3 {
+    color: #ff9900;
+}
+
+div#notebook h4 {
+    color: #ffee00;
+}
+div#notebook h5 {
+    color: #00ff2f;
+}
+
+/* Markdown - quote */
+div#notebook blockquote{
+    background-color: #f8f8f8;
+    color: #505050;
+    padding: 8.5px;
+    margin: 0.5em -0.5em 0.5em -0.4em;
+}
+
+/* Markdown - code in paragraph */
+div#notebook p code, div#notebook li code {
+    font-family: Consolas, "PingFangSC-Medium", "Microsoft YaHei";
+    font-size: 1em !important;
+    color: #111111;
+    border: 0.5px solid #cfcfcf;
+    border-radius: 2px;
+    background-color: #f7f7f7;
+    padding: .1em .2em;
+    margin: 0px 2px;
+}
+
+/* Markdown - code */
+div.text_cell_render pre {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+    line-height: 1.21429em;
+    padding: 8.5px;
+    margin: 0.5em -0.5em 0.5em -0.4em;
+}
+div.text_cell_render code {
+    background: #f7f7f7;
+}
+
+/* Code */
+div.CodeMirror-code {
+    font-family: Consolas, "PingFangSC-Medium", "Microsoft YaHei";
+    font-size: 13pt;
+    line-height: 145%;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+/* Code - output */
+div.output pre {
+    font-family: Consolas, "PingFangSC-Medium", "Microsoft YaHei";
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+/* Code - comment */
+span.cm-comment {
+    font-family: san francisco, "PingFangSC-Medium", "Microsoft YaHei" !important;
+    font-style: normal !important;
+}
