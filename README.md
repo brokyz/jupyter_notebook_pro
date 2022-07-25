@@ -73,7 +73,7 @@ docker restart notebook_hub
 **下载相关Dockerfile**
 
 ```
-rm -rf build_notebook && mkdir build_notebook && cd build_notebook && wget https://raw.githubusercontent.com/brokyz/jupyter_notebook_pro/main/Dockerfile && docker build -t brokyz/notebook_hub:latest .
+rm -rf build_notebook && mkdir build_notebook && wget -P build_notebook/ https://raw.githubusercontent.com/brokyz/jupyter_notebook_pro/main/Dockerfile && docker build -t brokyz/jupyter_notebook_pro:latest build_notebook/ && rm -rf build_notebook
 ```
 
 **通过Dockerfile构建需要一定的时间, 镜像构建完成后执行上面的部署操作**
