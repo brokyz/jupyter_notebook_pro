@@ -12,7 +12,7 @@ ENV TZ=Asia/Shanghai
 # 从notebook_hub获取相关配置文件
 ADD https://raw.githubusercontent.com/brokyz/jupyter_notebook_pro/main/config/jupyter_notebook_config.py /root/tmp_config/
 ADD https://raw.githubusercontent.com/brokyz/jupyter_notebook_pro/main/config/custom.css /root/tmp_config/
-ADD https://github.com/brokyz/notebook_hub/raw/main/simhei/SimHei.ttf /root/tmp_config/
+ADD https://github.com/brokyz/jupyter_notebook_pro/raw/main/config/SimHei.ttf /root/tmp_config/
 ADD https://raw.githubusercontent.com/brokyz/jupyter_notebook_pro/main/config/README.ipynb /root/tmp_config/
 ADD https://raw.githubusercontent.com/brokyz/jupyter_notebook_pro/main/config/start_notebook.sh /root/tmp_config/
 
