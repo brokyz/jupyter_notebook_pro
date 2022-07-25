@@ -20,13 +20,20 @@
 
 - 对jupyter notebook的界面显示进行了美化。
 
-## 下载镜像并搭建（推荐）
+## 搭建步骤
 
-**拉取镜像**
+**获取镜像**
+1. 如果机器带宽足够可以直接从网络拉取镜像
 
 ```
 docker pull brokyz/jupyter_notebook_pro
 ```
+2. 如果机器带宽比较低可以使用Dockerfile本地构建镜像
+
+```
+rm -rf build_jupyter_notebook_pro && mkdir build_jupyter_notebook_pro && wget -P build_jupyter_notebook_pro/ https://raw.githubusercontent.com/brokyz/jupyter_notebook_pro/main/Dockerfile && docker build -t brokyz/jupyter_notebook_pro:latest build_jupyter_notebook_pro/ && rm -rf build_jupyter_notebook_pro
+```
+- 通过Dockerfile构建需要一定的时间, 镜像构建完成后执行上面的部署操作
 
 **部署镜像**
 
@@ -39,7 +46,9 @@ docker run -d -p 1000:8888 --name=jupyter_notebook_pro --restart=always brokyz/j
 
 ```
 docker logs jupyter_notebook_pro
-
+```
+结果示例:
+```
 # 结果如下，token为1294c0bfc1513e9f2250df2ad52d40eb40b1ab678341e563
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
@@ -59,23 +68,14 @@ docker logs jupyter_notebook_pro
 
 输入获得的token，并设置自己的登陆密码
 
-登陆密码设置后，需要重启容器才可以生效
+登陆密码设置后，需要**重启容器才可以生效**
 
 ```
-docker restart notebook_hub
+docker restart jupyter_notebook_pro
 ```
 
 之后仅需要通过 ip:1000 就可以访问了
 
-## 使用Dockerfile创建镜像(适合带宽不高的机器)
-
-**下载相关Dockerfile**
-
-```
-rm -rf build_notebook && mkdir build_notebook && wget -P build_notebook/ https://raw.githubusercontent.com/brokyz/jupyter_notebook_pro/main/Dockerfile && docker build -t brokyz/jupyter_notebook_pro:latest build_notebook/ && rm -rf build_notebook
-```
-
-**通过Dockerfile构建需要一定的时间, 镜像构建完成后执行上面的部署操作**
 
 ## 使用
 
