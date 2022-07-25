@@ -160,9 +160,6 @@ span.cm-comment {
     margin-top: 40px;
 }
 
-.end_space {
-    overflow: hidden;
-}
 .end_space::after {
     content: 'https://github.com/brokyz/jupyter_notebook_pro';
     display: block;

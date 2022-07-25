@@ -32,9 +32,8 @@ docker pull brokyz/jupyter_notebook_pro
 
 ```
 docker run -d -p 1000:8888 --name=jupyter_notebook_pro --restart=always brokyz/jupyter_notebook_pro
-
-# 如果存在端口冲突，请修改端口。比如想要通过ip:9999访问，则需要改成-p 9999:8888
 ```
+- 如果存在端口冲突，请修改端口。比如想要通过ip:9999访问，则需要改成-p 9999:8888
 
 **登录并查看镜像部署日志获取token**
 
